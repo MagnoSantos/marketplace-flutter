@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marketplace/pages/home.page.dart';
 import 'package:marketplace/pages/inscrever.page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -65,30 +66,22 @@ class LoginPage extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        TextFormField(
-                          autofocus: true,
+                        TextField(
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                            labelText: "Email",
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16,
-                            ),
+                            icon: Icon(Icons.email),
+                            hintText: "E-mail",
                           ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        TextFormField(
-                          autofocus: true,
-                          keyboardType: TextInputType.text,
+                        TextField(
+                          keyboardType: TextInputType.emailAddress,
                           obscureText: true,
                           decoration: InputDecoration(
-                            labelText: "Senha",
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16,
-                            ),
+                            icon: Icon(Icons.lock),
+                            hintText: "Senha",
                           ),
                         ),
                         FlatButton(
@@ -107,7 +100,14 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           child: FlatButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PaginaPrincipal(),
+                                ),
+                              );
+                            },
                             child: Text(
                               "Entrar",
                               style: TextStyle(color: Colors.white),
