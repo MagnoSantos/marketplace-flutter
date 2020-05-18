@@ -64,7 +64,7 @@ class LoginPage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 20,
                         ),
                         TextField(
                           keyboardType: TextInputType.emailAddress,
@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 20,
                         ),
                         TextField(
                           keyboardType: TextInputType.emailAddress,
@@ -89,7 +89,7 @@ class LoginPage extends StatelessWidget {
                           child: Text("Esqueceu sua senha?"),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 30,
                         ),
                         Container(
                           width: double.infinity,
@@ -139,7 +139,7 @@ class LoginPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 2.0,
-                      color: Colors.black12,
+                      color: Colors.blue,
                     ),
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),
@@ -172,7 +172,7 @@ class LoginPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 2.0,
-                      color: Colors.black12,
+                      color: Colors.red,
                     ),
                     borderRadius: BorderRadius.all(
                       Radius.circular(5),

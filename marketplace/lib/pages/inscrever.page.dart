@@ -41,9 +41,11 @@ class InscreverPage extends StatelessWidget {
                       top: 60,
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Text(
                           "Inscrever",
+                          textAlign: TextAlign.start,
                           style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
@@ -52,37 +54,11 @@ class InscreverPage extends StatelessWidget {
                         SizedBox(
                           height: 20,
                         ),
-                        TextFormField(
+                        TextField(
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
-                            labelText: "Nome",
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            labelText: "E-mail",
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextFormField(
-                          keyboardType: TextInputType.text,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            labelText: "Senha",
+                            icon: Icon(Icons.person),
+                            hintText: "Nome",
                             labelStyle: TextStyle(
                               fontWeight: FontWeight.w400,
                               fontSize: 16,
@@ -91,6 +67,35 @@ class InscreverPage extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 20,
+                        ),
+                        TextField(
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            icon: Icon(Icons.email),
+                            hintText: "E-mail",
+                            labelStyle: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TextField(
+                          keyboardType: TextInputType.text,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            icon: Icon(Icons.lock),
+                            hintText: "Senha",
+                            labelStyle: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
                         ),
                         Container(
                           width: double.infinity,
@@ -106,6 +111,7 @@ class InscreverPage extends StatelessWidget {
                               "Inscrever",
                               style: TextStyle(
                                 color: Colors.white,
+                                fontSize: 14,
                               ),
                             ),
                           ),
