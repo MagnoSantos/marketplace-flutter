@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marketplace/pages/signup.page.dart';
+import 'package:marketplace/pages/home.page.dart';
+import 'package:marketplace/pages/inscrever.page.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -9,16 +10,11 @@ class LoginPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             color: Color(0xFFF5F5F5F5),
-            padding: EdgeInsets.only(
-              top: 60,
-              right: 20,
-              left: 20,
-              bottom: 20,
-            ),
+            padding: EdgeInsets.all(20),
             child: Column(
               children: <Widget>[
                 Container(
-                  height: 380,
+                  height: 420,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
@@ -32,8 +28,12 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(30),
-                    child: ListView(
+                    padding: EdgeInsets.only(
+                      left: 15,
+                      right: 15,
+                      top: 60,
+                    ),
+                    child: Column(
                       children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,30 +66,22 @@ class LoginPage extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        TextFormField(
-                          autofocus: true,
+                        TextField(
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                            labelText: "Email",
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16,
-                            ),
+                            icon: Icon(Icons.email),
+                            hintText: "E-mail",
                           ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        TextFormField(
-                          autofocus: true,
-                          keyboardType: TextInputType.text,
+                        TextField(
+                          keyboardType: TextInputType.emailAddress,
                           obscureText: true,
                           decoration: InputDecoration(
-                            labelText: "Senha",
-                            labelStyle: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 16,
-                            ),
+                            icon: Icon(Icons.lock),
+                            hintText: "Senha",
                           ),
                         ),
                         FlatButton(
@@ -100,6 +92,7 @@ class LoginPage extends StatelessWidget {
                           height: 10,
                         ),
                         Container(
+                          width: double.infinity,
                           decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.all(
@@ -107,7 +100,14 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           child: FlatButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PaginaPrincipal(),
+                                ),
+                              );
+                            },
                             child: Text(
                               "Entrar",
                               style: TextStyle(color: Colors.white),
