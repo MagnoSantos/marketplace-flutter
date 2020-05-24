@@ -1,62 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:marketplace/pages/product.page.dart';
 
 class PaginaPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.all(15),
-        color: Color(0xFFF5F5F5F5),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            SizedBox(
-              height: 25,
-            ),
-            pesquisa(),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Categorias",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(15),
+          color: Color(0xFFF5F5F5F5),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              SizedBox(
+                height: 25,
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 90,
-              child: listaCategorias(),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  "Mais vendidos",
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+              pesquisa(),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Categorias",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
                 ),
-                FlatButton(
-                  onPressed: () {},
-                  child: Text("Veja todos"),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Container(
-              height: 320,
-              child: listaProdutos(),
-            ),
-          ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 90,
+                child: listaCategorias(),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Mais vendidos",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  FlatButton(
+                    onPressed: () {},
+                    child: Text("Veja todos"),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Container(
+                height: 320,
+                child: listaProdutos(context),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -146,21 +149,21 @@ class PaginaPrincipal extends StatelessWidget {
     );
   }
 
-  Widget listaProdutos() {
+  Widget listaProdutos(BuildContext context) {
     return Container(
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          itemProduto(),
-          itemProduto(),
-          itemProduto(),
-          itemProduto()
+          itemProduto(context),
+          itemProduto(context),
+          itemProduto(context),
+          itemProduto(context)
         ],
       ),
     );
   }
 
-  Widget itemProduto() {
+  Widget itemProduto(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(5),
@@ -169,11 +172,21 @@ class PaginaPrincipal extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Image.asset(
-            "assets/product-1.png",
-            width: 170,
-            height: 170,
-            fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductPage(),
+                ),
+              );
+            },
+            child: Image.asset(
+              "assets/product-1.png",
+              width: 170,
+              height: 170,
+              fit: BoxFit.cover,
+            ),
           ),
           SizedBox(
             height: 10,
