@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marketplace/pages/home.page.dart';
+import 'package:marketplace/pages/cart.page.dart';
 import 'package:marketplace/pages/login.page.dart';
 import 'package:marketplace/styles.dart';
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: aplicationTheme(),
-      home: LoginPage(),
+      home: CartPage(),
     );
   }
 }
