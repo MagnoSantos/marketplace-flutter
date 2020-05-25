@@ -18,7 +18,7 @@ class ProductPage extends StatelessWidget {
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 background: Image.asset(
-                  "assets/product-10.png",
+                  "assets/product-1.png",
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
