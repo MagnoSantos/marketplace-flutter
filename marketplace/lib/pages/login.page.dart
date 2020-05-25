@@ -100,17 +100,13 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           child: FlatButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PaginaPrincipal(),
-                                ),
-                              );
-                            },
+                            onPressed: () {},
                             child: Text(
                               "Entrar",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                         )
